@@ -1,17 +1,22 @@
 {% extends 'blog/base.html' %} 
 {% block main_area %} 
 
-    <div class="image_buttons">
-        <img class="landing_main" src="{% static 'single_pages/images/blogimg.jpg' %}" width="100%" height="500px">
-    </div>
 
     <div class="contents">
         {% for p in post_list %}
     <hr />
+    <!-- featured image --> 
+    {% if p.image %}
+    <img src="{{ p.image.url }}" width="20%">
+    {% endif %}
     <h4 class="font_style"><a href="{{ p.get_absolute_url }}" class="title_link">{{ p.title }}</a></h4>
     <h6>{{ p.created_at }}</h6>
+
      {% endfor %}
 
     </div>
+
+
+    
 
 {% endblock %}

@@ -3,9 +3,10 @@
 {% block main_area %}
 
     <h1>{{ post.title }}</h1>
+    <div><img src="{{ post.image.url }}" width="40%"></div>
     <h4>{{ post.created_at }}</h4>
     <p>{{ post.content }}</p>
     <hr />
-    <h3>여기 댓글이 들어올 수 있겠죠?</h3>
+
 
 {% endblock %}
