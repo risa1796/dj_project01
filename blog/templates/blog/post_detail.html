@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends 'blog/base.html' %}
+{% block head_title %} {{post.title}} -Blog {% endblock %}
+{% block main_area %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>{{ post.title }} - Blog</title>
-</head>
-
-<body>
-    <nav>
-        <a href="/blog/">Blog</a>
-    </nav>
     <h1>{{ post.title }}</h1>
     <h4>{{ post.created_at }}</h4>
     <p>{{ post.content }}</p>
     <hr />
     <h3>여기 댓글이 들어올 수 있겠죠?</h3>
-</body>
 
-</html>
+{% endblock %}
