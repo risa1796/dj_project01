@@ -77,6 +77,15 @@
 
                     <div class="card mb-4" id="post-{{p.pk}}">
                     {% for p in post_list %}
+
+                        {% if p.tags.exists %}
+                        <i class="fas fa-tags"></i>
+                        {% for tag in p.tags.iterator %}
+                            <a href="{{ tag.get_absolute_url }}"><span class="badge badge-pill badge-light">{{ tag }}</span></a>
+                        {% endfor %}
+                        <br/>
+                        <br/>
+                        {% endif %}
                         
                             <!-- featured image --> 
                         {% if p.image %}
