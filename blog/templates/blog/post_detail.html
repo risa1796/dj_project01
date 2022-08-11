@@ -3,10 +3,21 @@
 {% block main_area %}
 
     <h1>{{ post.title }}</h1>
+    <p class = "lead">
+        by
+        <a href="#">{{post.author | upper}} </a>
+    </p>
     <div><img src="{{ post.image.url }}" width="40%"></div>
     <h4>{{ post.created_at }}</h4>
     <p>{{ post.content }}</p>
     <hr />
+
+    {% if post.upload_file %}
+    <p>첨부된 파일:</p>
+    <a href="{{ post.upload_file.url }}">{{ post.upload_file.name }}</a>
+    {% endif %}
+
+    <div class="space"></div>
 
 
 {% endblock %}
